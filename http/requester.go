@@ -57,7 +57,7 @@ func (r *Just) ResponseToStruct(response *http.Response, result interface{}) err
 	return errors.New("Just: object [result] can not be empty ")
 }
 
-func (r *Just) SaveResponseToFile(response *http.Response, conf SaveToFileConfig) error {
+func (r *Just) ResponseToFile(response *http.Response, conf SaveToFileConfig) error {
 	if conf.ReplaceData {
 		body, err := ioutil.ReadAll(response.Body)
 		if err != nil {
